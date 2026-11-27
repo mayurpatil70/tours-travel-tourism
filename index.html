@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Devbhoomi Trails — Himalayan Treks, Char Dham Yatra & Tour Packages</title>
+  <meta name="description" content="Himalayan treks, Char Dham Yatra, Kedarnath, Valley of Flowers, Spiti and family tour packages. Enquire instantly on WhatsApp +91 70177 25248." />
+  <meta name="theme-color" content="#0b1220" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Liquid-glass refraction filter (Chromium uses it on backdrop; others fall back to blur) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="liquid" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise" />
+      <feGaussianBlur in="noise" stdDeviation="2" result="soft" />
+      <feDisplacementMap in="SourceGraphic" in2="soft" scale="38" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+
+  <!-- Ambient background blobs (secondary action) -->
+  <div class="ambient" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav-wrap">
+    <nav class="nav glass" id="nav">
+      <a href="#top" class="brand" aria-label="Devbhoomi Trails home">
+        <span class="brand-mark squishy" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><path d="M3 33 L15 13 L21 22 L26 15 L37 33 Z" fill="currentColor"/><circle cx="29" cy="9" r="3.4" fill="#ffd27a"/></svg>
+        </span>
+        <span class="brand-text">Devbhoomi<b>Trails</b></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#departures">Departures</a></li>
+        <li><a href="#yatra">Char Dham</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <span class="nav-pill" aria-hidden="true"></span>
+      </ul>
+      <a class="btn btn-primary btn-sm squishy wind-up" data-enquire="general" href="#">
+        <span>Enquire</span><i class="arrow">→</i>
+      </a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="layer sky"></div>
+        <div class="layer far" data-depth="0.15"></div>
+        <div class="layer mid" data-depth="0.3"></div>
+        <div class="layer near" data-depth="0.5"></div>
+        <div class="cloud c1" aria-hidden="true"></div>
+        <div class="cloud c2" aria-hidden="true"></div>
+        <svg class="flight-path" viewBox="0 0 1200 400" preserveAspectRatio="none"><path id="arcPath" d="M-40 360 Q 600 -140 1240 300" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-dasharray="6 10"/></svg>
+        <div class="plane" aria-hidden="true">✈</div>
+      </div>
+
+      <div class="hero-inner">
+        <span class="chip glass reveal" data-pose="drop">🏔️ 25,000+ happy trekkers & yatris since 2012</span>
+        <h1 class="hero-title">
+          <span class="line"><span class="word">Walk</span> <span class="word">where</span></span>
+          <span class="line"><span class="word accent">gods</span> <span class="word">wander.</span></span>
+        </h1>
+        <p class="hero-sub reveal" data-pose="rise">Himalayan treks, sacred Char Dham yatras and handcrafted mountain holidays, run by locals who were born in the hills.</p>
+
+        <form class="search glass reveal" data-pose="rise" id="searchForm" autocomplete="off">
+          <label class="field">
+            <small>Where to?</small>
+            <select id="sDest">
+              <option value="">Any destination</option>
+              <option>Uttarakhand</option><option>Himachal Pradesh</option><option>Char Dham</option><option>Rishikesh</option>
+            </select>
+          </label>
+          <label class="field">
+            <small>Experience</small>
+            <select id="sType">
+              <option value="all">All journeys</option>
+              <option value="trek">Trek</option><option value="pilgrimage">Yatra</option><option value="adventure">Adventure</option><option value="family">Family / Honeymoon</option>
+            </select>
+          </label>
+          <label class="field">
+            <small>When</small>
+            <input type="month" id="sMonth" />
+          </label>
+          <button class="btn btn-primary squishy wind-up" type="submit"><span>Find trips</span><i class="arrow">→</i></button>
+        </form>
+
+        <div class="hero-badges reveal" data-pose="rise">
+          <span>⭐ 4.9 Google rating</span><span>🛡️ Certified leaders</span><span>💬 Instant WhatsApp support</span>
+        </div>
+      </div>
+
+      <a href="#stats" class="scroll-cue" aria-label="Scroll down"><span></span></a>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats" id="stats">
+      <div class="stats-grid">
+        <div class="stat glass tilt reveal"><b data-count="25000">0</b><span>+ travellers</span></div>
+        <div class="stat glass tilt reveal"><b data-count="60">0</b><span>+ curated routes</span></div>
+        <div class="stat glass tilt reveal"><b data-count="14">0</b><span>years in the hills</span></div>
+        <div class="stat glass tilt reveal"><b data-count="49" data-decimal="1">0</b><span>★ average rating</span></div>
+      </div>
+    </section>
+
+    <!-- ============ PACKAGES ============ -->
+    <section class="section" id="packages">
+      <div class="section-head">
+        <span class="eyebrow reveal">Handpicked journeys</span>
+        <h2 class="reveal">Our most-loved packages</h2>
+        <p class="reveal">From frozen summits to sacred shrines, every trip is led by our own team, with transparent pricing and no hidden costs.</p>
+      </div>
+
+      <div class="tabs glass reveal" id="tabs" role="tablist"></div>
+      <div class="cards" id="cards"></div>
+      <p class="empty" id="emptyState" hidden>No trips match. <a href="#" data-enquire="general">Ask us for a custom plan →</a></p>
+    </section>
+
+    <!-- ============ DEPARTURES ============ -->
+    <section class="section alt" id="departures">
+      <div class="section-head">
+        <span class="eyebrow reveal">Fixed group departures</span>
+        <h2 class="reveal">Upcoming batches filling fast</h2>
+      </div>
+      <div class="departures glass reveal" id="departureList"></div>
+    </section>
+
+    <!-- ============ CHAR DHAM SPOTLIGHT (staging) ============ -->
+    <section class="section spotlight" id="yatra">
+      <div class="spot-wrap">
+        <div class="spot-media reveal" data-pose="left">
+          <div class="spot-img" style="--img:url('https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=70')"></div>
+          <div class="spot-float glass bob">🛕 <b>4 Dhams</b><small>in 10 days</small></div>
+          <div class="spot-float f2 glass bob">🚁 <b>Heli</b><small>upgrade</small></div>
+        </div>
+        <div class="spot-copy">
+          <span class="eyebrow reveal">Spotlight · Yatra 2027</span>
+          <h2 class="reveal">Char Dham Yatra,<br/>done with devotion.</h2>
+          <p class="reveal">Yamunotri, Gangotri, Kedarnath and Badrinath with hotels close to the temples, darshan assistance and a 24×7 tour manager. Parents and grandparents travel comfortably with doli, pony or helicopter options.</p>
+          <ul class="ticks reveal">
+            <li>Yatra registration & medical check help</li>
+            <li>Senior-citizen friendly pacing</li>
+            <li>Private Innova / Tempo Traveller</li>
+            <li>Pure veg Satvik meals</li>
+          </ul>
+          <div class="spot-cta reveal">
+            <div class="price-tag"><small>from</small><b>₹32,999</b><small>/ person</small></div>
+            <a href="#" class="btn btn-primary squishy wind-up" data-enquire="chardham"><span>Enquire on WhatsApp</span><i class="arrow">→</i></a>
+            <button class="btn btn-ghost squishy" data-details="chardham">View itinerary</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY US ============ -->
+    <section class="section" id="why">
+      <div class="section-head">
+        <span class="eyebrow reveal">Why travel with us</span>
+        <h2 class="reveal">Mountain-born. Safety-first.</h2>
+      </div>
+      <div class="why-grid">
+        <article class="why glass tilt reveal"><span class="why-ico wiggle">🧭</span><h3>Local experts</h3><p>Our leaders and guides grew up in Garhwal and Kumaon. They know every trail, weather window and shortcut.</p></article>
+        <article class="why glass tilt reveal"><span class="why-ico wiggle">🛡️</span><h3>Safety protocols</h3><p>Oximeters, oxygen cylinders, daily health checks and wilderness-first-aid certified staff on every batch.</p></article>
+        <article class="why glass tilt reveal"><span class="why-ico wiggle">🌱</span><h3>Leave no trace</h3><p>Every trekker carries an eco-bag. Together we've brought 12 tonnes of waste down from the trails.</p></article>
+        <article class="why glass tilt reveal"><span class="why-ico wiggle">💸</span><h3>Honest pricing</h3><p>Prices include permits, meals and stays. Flexible vouchers if the weather turns.</p></article>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section alt" id="reviews">
+      <div class="section-head">
+        <span class="eyebrow reveal">Traveller stories</span>
+        <h2 class="reveal">25,000 smiles and counting</h2>
+      </div>
+      <div class="carousel reveal">
+        <button class="car-btn prev glass squishy" aria-label="Previous review">‹</button>
+        <div class="car-track" id="carTrack"></div>
+        <button class="car-btn next glass squishy" aria-label="Next review">›</button>
+      </div>
+      <div class="dots" id="carDots"></div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="section" id="gallery">
+      <div class="section-head">
+        <span class="eyebrow reveal">Moments from the mountains</span>
+        <h2 class="reveal">Captured on our trails</h2>
+      </div>
+      <div class="gallery" id="gallery-grid"></div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section alt" id="faq">
+      <div class="section-head">
+        <span class="eyebrow reveal">Good to know</span>
+        <h2 class="reveal">Frequently asked questions</h2>
+      </div>
+      <div class="faq" id="faqList"></div>
+    </section>
+
+    <!-- ============ ENQUIRY CTA ============ -->
+    <section class="section" id="enquire">
+      <div class="cta glass reveal">
+        <div class="cta-copy">
+          <span class="eyebrow">Plan your trip in 2 minutes</span>
+          <h2>Tell us your dream trip.<br/>We'll reply on WhatsApp.</h2>
+          <p>Share a few details and your message opens in WhatsApp, ready to send to <b>+91 70177 25248</b>.</p>
+        </div>
+        <form class="cta-form" id="ctaForm">
+          <input class="glass-input" name="name" placeholder="Your name" required />
+          <select class="glass-input" name="pkg" id="ctaPkg"></select>
+          <div class="row">
+            <input class="glass-input" name="date" type="date" aria-label="Travel date" />
+            <input class="glass-input" name="pax" type="number" min="1" value="2" aria-label="Travellers" />
+          </div>
+          <textarea class="glass-input" name="note" rows="2" placeholder="Anything special? (optional)"></textarea>
+          <button class="btn btn-wa squishy wind-up" type="submit"><span>Send enquiry on WhatsApp</span><i class="arrow">→</i></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="foot-grid">
+      <div>
+        <a href="#top" class="brand"><span class="brand-mark"><svg viewBox="0 0 40 40"><path d="M3 33 L15 13 L21 22 L26 15 L37 33 Z" fill="currentColor"/><circle cx="29" cy="9" r="3.4" fill="#ffd27a"/></svg></span><span class="brand-text">Devbhoomi<b>Trails</b></span></a>
+        <p>Himalayan treks, yatras & tours from Dehradun, Uttarakhand.</p>
+      </div>
+      <div><h4>Treks</h4><a href="#packages" data-filter="trek">Kedarkantha</a><a href="#packages" data-filter="trek">Brahmatal</a><a href="#packages" data-filter="trek">Valley of Flowers</a><a href="#packages" data-filter="trek">Hampta Pass</a></div>
+      <div><h4>Yatra</h4><a href="#packages" data-filter="pilgrimage">Char Dham</a><a href="#packages" data-filter="pilgrimage">Do Dham</a><a href="#packages" data-filter="pilgrimage">Kedarnath</a><a href="#packages" data-filter="pilgrimage">Badrinath</a></div>
+      <div><h4>Contact</h4><a href="#" data-enquire="general">💬 +91 70177 25248</a><a href="tel:+917017725248">📞 Call us</a><span>📍 Dehradun, Uttarakhand</span></div>
+    </div>
+    <p class="copy">© <span id="year"></span> Devbhoomi Trails. Made with ❤️ in the Himalayas.</p>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="#" class="fab squishy" data-enquire="general" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" width="30" height="30"><path fill="#fff" d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.5.7 4.8 2 6.8L3.2 29l6.8-2.1c1.9 1.1 4 1.6 6.1 1.6 7 0 12.7-5.6 12.7-12.6S23 3 16 3zm0 23.1c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4 1.2 1.2-3.9-.3-.4c-1.1-1.7-1.7-3.6-1.7-5.6C5.4 9.9 10.2 5.2 16 5.2s10.6 4.7 10.6 10.5S21.8 26.1 16 26.1zm5.8-7.8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.6-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.3.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+    <span class="fab-ring"></span>
+  </a>
+
+  <!-- Details modal -->
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card glass" id="modalCard"></div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast glass" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
