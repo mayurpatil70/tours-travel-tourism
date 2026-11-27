@@ -342,7 +342,7 @@
      ========================================================= */
   function heroStory() {
     const hero = $(".hero"); if (!hero) return;
-    const dome = $(".dome"), l1 = $(".hero-title .l1"), l2 = $(".hero-title .l2"), foot = $(".hero-foot"), media = $(".hero-media"), dim = $(".hero-dim"), hint = $(".scroll-hint");
+    const dome = $(".dome"), l1 = $(".hero-title .l1"), l2 = $(".hero-title .l2"), foot = $(".hero-foot"), media = $(".hero-media"), dim = $(".hero-dim");
     $$(".hero-title .w").forEach((w, i) => w.style.setProperty("--i", i));
     requestAnimationFrame(() => $(".hero-title").classList.add("go"));
     let vh = innerHeight, vw = innerWidth, done = false;
@@ -359,7 +359,6 @@
       foot.style.opacity = clamp(1 - p * 1.8, 0, 1);
       media.style.transform = `scale(${1 + p * .12})`;
       dim.style.opacity = p * .7;
-      if (hint) hint.style.opacity = clamp(1 - p * 4, 0, 1);
     });
   }
 
@@ -422,6 +421,14 @@
     onResize(measure);
     // images in the mosaic can shift layout once loaded → re-measure once
     addEventListener("load", () => { measure(); frame(scrollY); }, { once: true });
+    // Sections above use content-visibility:auto and lazy images, so their height
+    // changes as they render. Re-measure whenever the page height changes.
+    let lastH = 0, roRaf = 0;
+    new ResizeObserver(() => {
+      const h = document.documentElement.scrollHeight;
+      if (h === lastH || roRaf) return;
+      roRaf = requestAnimationFrame(() => { roRaf = 0; lastH = document.documentElement.scrollHeight; measure(); frame(scrollY); });
+    }).observe(document.body);
     onScroll(frame);
   }
 
@@ -445,6 +452,11 @@
 
   function home() {
     heroStory();
+    const ms = $("#sMonth"), now = new Date();
+    for (let i = 0; i < 12; i++) {
+      const d = new Date(now.getFullYear(), now.getMonth() + i, 1);
+      ms.insertAdjacentHTML("beforeend", `<option value="${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}">${d.toLocaleString("en-IN", { month: "long", year: "numeric" })}</option>`);
+    }
     // featured packages (6) with tabs
     const cards = $("#cards");
     const show = cat => renderCards(cards, PACKAGES.filter(p => cat === "all" || p.category === cat).slice(0, 6));
@@ -471,10 +483,20 @@
     let cat = CATEGORIES.some(c => c.key === qs.get("type")) ? qs.get("type") : "all";
     const search = $("#q"), sort = $("#sort"), grid = $("#cards"), empty = $("#emptyState"), count = $("#resultCount");
     const dest = qs.get("dest") || "";
-    if (dest) search.value = dest;
+    if (dest) search.value = dest.slice(0, 60);
+    // optional ?month=YYYY-MM from the home search → keep trips whose best season covers it
+    const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const mm = /^(\d{4})-(0[1-9]|1[0-2])$/.exec(qs.get("month") || "");
+    const month = mm ? +mm[2] - 1 : -1;
+    const inSeason = p => {
+      if (month < 0 || /year round/i.test(p.season)) return true;
+      const m = /(\w{3})\s*[–-]\s*(\w{3})/.exec(p.season); if (!m) return true;
+      const a = MON.indexOf(m[1]), b = MON.indexOf(m[2]); if (a < 0 || b < 0) return true;
+      return a <= b ? month >= a && month <= b : month >= a || month <= b;
+    };
     const apply = () => {
       const q = search.value.trim().toLowerCase();
-      let list = PACKAGES.filter(p => (cat === "all" || p.category === cat) &&
+      let list = PACKAGES.filter(p => inSeason(p) && (cat === "all" || p.category === cat) &&
         (!q || `${p.name} ${p.region} ${p.category} ${p.highlights.join(" ")}`.toLowerCase().includes(q) || (q === "char dham" && p.category === "pilgrimage")));
       const s = sort.value;
       if (s === "price-asc") list.sort((a, b) => a.price - b.price);
@@ -483,7 +505,7 @@
       if (s === "rating") list.sort((a, b) => b.rating - a.rating);
       renderCards(grid, list);
       empty.hidden = list.length > 0;
-      count.textContent = `${list.length} journey${list.length === 1 ? "" : "s"}`;
+      count.textContent = `${list.length} journey${list.length === 1 ? "" : "s"}` + (month >= 0 ? ` in season for ${new Date(+mm[1], month, 1).toLocaleString("en-IN", { month: "long", year: "numeric" })}` : "");
     };
     makeTabs($("#tabs"), c => { cat = c; apply(); }, cat);
     let t; search.addEventListener("input", () => { clearTimeout(t); t = setTimeout(apply, 140); });
