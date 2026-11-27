@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>All Tour Packages — Treks, Yatra & Holidays | Devbhoomi Trails</title>
+  <meta name="description" content="Browse every Himalayan trek, Char Dham yatra, adventure and family package with prices, dates and instant WhatsApp enquiry." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+</head>
+<body data-page="packages">
+<main id="main">
+
+  <section class="page-hero has-dome">
+    <div class="bg"><img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=1800&q=70" alt="" decoding="async" fetchpriority="high" /></div>
+    <div class="wrap">
+      <p class="crumbs"><a href="index.html">Home</a> / Packages</p>
+      <h1>Every<br/>journey</h1>
+      <p>Treks, yatras, adventures and slow family holidays, each one led by our own Himalayan team.</p>
+    </div>
+    <div class="dome-static black"></div>
+  </section>
+
+  <section class="section dark" style="padding-top:50px">
+    <div class="wrap">
+      <div class="toolbar">
+        <div class="tabs glass" id="tabs" role="tablist" aria-label="Filter by category"></div>
+      </div>
+      <div class="toolbar">
+        <input class="tool-input" id="q" type="search" placeholder="Search trips, regions, highlights…" aria-label="Search packages" maxlength="60" />
+        <select class="tool-input" id="sort" aria-label="Sort">
+          <option value="popular">Sort: Popular</option>
+          <option value="price-asc">Price: Low → High</option>
+          <option value="price-desc">Price: High → Low</option>
+          <option value="days">Duration: Shortest</option>
+          <option value="rating">Rating: Highest</option>
+        </select>
+      </div>
+      <p class="center" style="margin:0 0 26px;color:var(--fg-3)" id="resultCount" aria-live="polite"></p>
+      <div class="cards" id="cards"></div>
+      <p class="empty" id="emptyState" hidden>No trips match. <a href="#" data-enquire="general">Ask us for a custom plan →</a></p>
+    </div>
+  </section>
+
+  <section class="section cream">
+    <div class="wrap">
+      <div class="cta glass reveal">
+        <div><span class="eyebrow">Can't decide?</span><h2 class="h2" style="font-size:clamp(2rem,4.4vw,3.4rem)">We'll build it<br/>for you.</h2><p>Tell us your dates and budget and we'll send a custom itinerary on WhatsApp.</p></div>
+        <form class="form" id="enquiryForm" novalidate>
+          <input class="input" name="name" placeholder="Your name" maxlength="80" autocomplete="name" aria-label="Your name" />
+          <select class="input" name="pkg" aria-label="Package"></select>
+          <div class="row">
+            <input class="input" name="date" type="date" aria-label="Travel date" />
+            <input class="input" name="pax" type="number" min="1" max="99" value="2" aria-label="Travellers" />
+          </div>
+          <textarea class="input" name="note" rows="3" maxlength="300" placeholder="Tell us about your trip (optional)" aria-label="Note"></textarea>
+          <button class="btn btn-wa squishy wind-up" type="submit"><span>Send on WhatsApp</span><i class="arrow">→</i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <a class="next-page dark" href="about.html">
+    <small>Next page</small>
+    <span class="big"><span>Our story</span><i class="arrow">→</i></span>
+    <span class="under"></span>
+  </a>
+</main>
+</body>
+</html>
