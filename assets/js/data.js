@@ -203,3 +203,17 @@ const FAQS = [
   { q: "What is your cancellation policy?", a: "Cancel 30+ days before departure for a full credit voucher, or get 50% back 15–29 days out. If weather forces a cancellation, you get a 100% voucher." },
   { q: "Can you customise a private tour?", a: "Absolutely. Tell us your dates, group size and budget on WhatsApp and we'll design a private itinerary with your choice of hotels and vehicle." }
 ];
+
+/* Gallery — 8 frames (fills the 4×3 mosaic, incl. bottom-right) */
+const GALLERY = [
+  { img: "1454496522488-7a8e488e8606", title: "Summit at first light", place: "Kedarkantha, 12,500 ft", hue: 210 },
+  { img: "1464822759023-fed622ff2c3b", title: "Above the clouds", place: "Hampta Pass, Himachal", hue: 250 },
+  { img: "1500534314209-a25ddb2bd429", title: "Valley in bloom", place: "Valley of Flowers", hue: 130 },
+  { img: "1626621341517-bbf3d9990a23", title: "Bells of Kedarnath", place: "Kedarnath Dham", hue: 28 },
+  { img: "1519681393784-d120267933ba", title: "Camp under the Milky Way", place: "Brahmatal", hue: 230 },
+  { img: "1590077428593-a55bb07c4665", title: "White water, wild hearts", place: "Rishikesh", hue: 190 },
+  { img: "1506905925346-21bda4d32df4", title: "Ridge-line sunsets", place: "Mussoorie", hue: 160 },
+  { img: "1626621340935-18f8ba7fda33", title: "Desert of the mountains", place: "Spiti Valley", hue: 35 }
+];
+
+const EXCLUSIONS = ["Travel to the starting city", "Personal expenses & tips", "Travel insurance", "Anything not under inclusions"];

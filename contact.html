@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Contact & Enquiry — Devbhoomi Trails</title>
+  <meta name="description" content="Plan your Himalayan trek or Char Dham yatra. WhatsApp or call +91 70177 25248." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+</head>
+<body data-page="contact">
+<main id="main">
+
+  <section class="page-hero has-dome">
+    <div class="bg"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1800&q=70" alt="" decoding="async" fetchpriority="high" /></div>
+    <div class="wrap">
+      <p class="crumbs"><a href="index.html">Home</a> / Contact</p>
+      <h1>Let's plan<br/>your trip</h1>
+      <p>We usually reply on WhatsApp within minutes, 8 am to 10 pm, every day.</p>
+    </div>
+    <div class="dome-static"></div>
+  </section>
+
+  <section class="section light" style="padding-top:60px">
+    <div class="wrap">
+      <div class="contact-cards">
+        <a class="ccard glass reveal" href="https://wa.me/917017725248" data-enquire="general" rel="noopener"><span class="ico">💬</span><h3>WhatsApp</h3><p>+91 70177 25248</p></a>
+        <a class="ccard glass reveal" href="tel:+917017725248"><span class="ico">📞</span><h3>Call us</h3><p>+91 70177 25248</p></a>
+        <div class="ccard glass reveal"><span class="ico">📍</span><h3>Visit</h3><p>Dehradun, Uttarakhand, India</p></div>
+      </div>
+      <div class="cta glass reveal">
+        <div><span class="eyebrow">Enquiry form</span><h2 class="h2" style="font-size:clamp(2rem,4.4vw,3.4rem)">Your trip,<br/>your way.</h2><p>Pick a package or leave it blank for a custom plan. Your details go straight into a WhatsApp message, and nothing is stored on this website.</p></div>
+        <form class="form" id="enquiryForm" novalidate>
+          <input class="input" name="name" placeholder="Your name" maxlength="80" autocomplete="name" aria-label="Your name" />
+          <select class="input" name="pkg" aria-label="Package"></select>
+          <div class="row">
+            <input class="input" name="date" type="date" aria-label="Travel date" />
+            <input class="input" name="pax" type="number" min="1" max="99" value="2" aria-label="Travellers" />
+          </div>
+          <textarea class="input" name="note" rows="3" maxlength="300" placeholder="Tell us about your trip (optional)" aria-label="Note"></textarea>
+          <button class="btn btn-wa squishy wind-up" type="submit"><span>Send on WhatsApp</span><i class="arrow">→</i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow lines reveal">Good to know</span><h2 class="h2 reveal">FAQ</h2></div>
+      <div class="faq" id="faqList"></div>
+    </div>
+  </section>
+
+  <a class="next-page light" href="index.html">
+    <small>Next page</small>
+    <span class="big"><span>Back home</span><i class="arrow">→</i></span>
+    <span class="under"></span>
+  </a>
+</main>
+</body>
+</html>
