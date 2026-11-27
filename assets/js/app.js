@@ -151,7 +151,7 @@
 
   /* ---------------- Cards ---------------- */
   function cardHTML(p, i) {
-    return `<article class="card glass" style="--i:${i}">
+    return `<article class="card glass" data-cat="${p.category}" style="--i:${i}">
       <a class="card-media" href="package.html?id=${p.id}" tabindex="-1" aria-hidden="true">
         <img src="${img(p.img.match(/photo-([^?]+)/)[1], 700)}" alt="" loading="lazy" decoding="async" width="700" height="480" />
         <span class="badge">${esc(p.badge)}</span>
@@ -159,7 +159,7 @@
       </a>
       <button class="fav" aria-label="Save ${esc(p.name)}" aria-pressed="false">♡</button>
       <div class="card-body">
-        <span class="region">${esc(p.region)}</span>
+        <span class="region"><span class="cat-dot" aria-hidden="true"></span>${esc(p.region)}</span>
         <h3><a href="package.html?id=${p.id}">${esc(p.name)}</a></h3>
         <div class="meta"><div><small>Duration</small><b>${p.days}D / ${p.nights}N</b></div><div><small>Altitude</small><b>${esc(p.altitude)}</b></div><div><small>Grade</small><b>${esc(p.difficulty)}</b></div></div>
         <div class="dates">${p.dates.slice(0, 3).map(d => `<span>${esc(d)}</span>`).join("")}</div>
