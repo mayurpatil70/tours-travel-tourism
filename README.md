@@ -5,7 +5,7 @@ A fast, secure static website for tours and travel (HTML, CSS and vanilla JS, no
 ## Pages
 | Page | What's on it |
 |---|---|
-| `index.html` | Sticky hero, half-round "About" section that rises over it as you scroll, stats, marquee, featured packages, departures, Char Dham spotlight, why us, **pinned gallery scrollytelling**, next-page teaser, reviews, FAQ, enquiry form |
+| `index.html` | Sticky hero, half-round "About" section that rises over it as you scroll, stats, featured packages, departures, Char Dham spotlight, why us, **pinned gallery scrollytelling**, next-page teaser, reviews floating right to left, FAQ, enquiry form |
 | `packages.html` | All packages with category tabs, search and sort (accepts `?type=&dest=` from the home search) |
 | `package.html?id=…` | Detail page: itinerary timeline, what's included and not, departure picker, traveller stepper with live total, WhatsApp enquiry with the chosen date and group size |
 | `about.html` | Story, milestones, numbers, team |
@@ -22,7 +22,7 @@ A fast, secure static website for tours and travel (HTML, CSS and vanilla JS, no
 - Removed the page-wide pointer-move handler and the `filter: blur` reveal and staging animations.
 - One passive scroll listener feeds one `requestAnimationFrame`. Handlers write only `transform` and `opacity`, use values cached on resize, and skip unchanged writes.
 - Uses `content-visibility: auto` on sections further down the page, lazy and async image decoding, a preloaded hero image, and system fonts (no web-font download).
-- Tilt effect only on desktop, throttled to animation frames. The reviews carousel autoplays only while it is on screen.
+- Tilt effect only on desktop, throttled to animation frames. The floating reviews animate only while they are on screen.
 
 ## Security
 - A strict **Content Security Policy** on every page and in `vercel.json`: scripts only from this site, images only from this site and Unsplash, `object-src 'none'`, `frame-ancestors 'none'`.
@@ -50,6 +50,6 @@ Deploy on Vercel with Framework Preset **Other** and no build command.
 | Follow through | Spring overshoot on cards, nav pill, modal, tilt release |
 | Slow in, slow out | Eased scroll scenes, count-up stats |
 | Arcs | Gallery photos swipe in along an arc; confetti falls in parabolas; dome rises in an arc |
-| Secondary action | Marquee, floating badges, icon wiggle, blinking seat indicator |
+| Secondary action | Reviews floating right to left, floating badges, icon wiggle, blinking seat indicator |
 | Snappy timing | 160 ms tab, filter and card-exit transitions |
 | Exaggerated feedback | Confetti and popping message on Enquire, heart pop, number pops, live total bump |
