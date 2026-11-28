@@ -314,27 +314,14 @@
     form.addEventListener("animationend", ev => ev.target.classList.remove("shake"));
   }
 
-  function initCarousel() {
-    const track = $("#carTrack"), dotsEl = $("#carDots"); if (!track) return;
-    track.innerHTML = TESTIMONIALS.map(t => `<article class="review glass"><div class="stars">${"★".repeat(t.stars)}</div><p>“${esc(t.text)}”</p><div class="who"><span class="avatar">${t.name.split(" ").map(s => s[0]).slice(0, 2).join("")}</span><div><b>${esc(t.name)}</b><small>${esc(t.city)} · ${esc(t.trip)}</small></div></div></article>`).join("");
-    dotsEl.innerHTML = TESTIMONIALS.map((_, i) => `<button aria-label="Review ${i + 1}"></button>`).join("");
-    const rv = $$(".review", track), dots = $$("button", dotsEl);
-    let idx = 0, raf = 0;
-    const goTo = i => { idx = (i + rv.length) % rv.length; const r = rv[idx]; track.scrollTo({ left: r.offsetLeft - (track.clientWidth - r.clientWidth) / 2, behavior: reduced ? "auto" : "smooth" }); };
-    const sync = () => {
-      raf = 0; const mid = track.scrollLeft + track.clientWidth / 2; let best = 0, bd = Infinity;
-      rv.forEach((r, i) => { const d = Math.abs(r.offsetLeft + r.clientWidth / 2 - mid); if (d < bd) { bd = d; best = i; } });
-      idx = best; rv.forEach((r, i) => r.classList.toggle("dim", i !== best)); dots.forEach((d, i) => d.classList.toggle("on", i === best));
-    };
-    track.addEventListener("scroll", () => { if (!raf) raf = requestAnimationFrame(sync); }, { passive: true });
-    $(".car-btn.prev").addEventListener("click", () => goTo(idx - 1));
-    $(".car-btn.next").addEventListener("click", () => goTo(idx + 1));
-    dots.forEach((d, i) => d.addEventListener("click", () => goTo(i)));
-    // autoplay only while visible
-    let timer = null;
-    new IntersectionObserver(([en]) => { clearInterval(timer); if (en.isIntersecting && !reduced) timer = setInterval(() => goTo(idx + 1), 5500); }).observe(track);
-    track.addEventListener("pointerdown", () => clearInterval(timer));
-    sync();
+  function initReviews() {
+    const track = $("#reviewTrack"); if (!track) return;
+    const card = (t, hidden) => `<article class="review glass"${hidden ? ' aria-hidden="true"' : ""}><div class="stars" aria-label="${t.stars} out of 5 stars">${"★".repeat(t.stars)}</div><p>“${esc(t.text)}”</p><div class="who"><span class="avatar" aria-hidden="true">${esc(t.name.split(" ").map(s => s[0]).slice(0, 2).join(""))}</span><div><b>${esc(t.name)}</b><small>${esc(t.city)} · ${esc(t.trip)}</small></div></div></article>`;
+    // two identical sets → translate -50% loops seamlessly; the copy is hidden from screen readers
+    track.innerHTML = TESTIMONIALS.map(t => card(t, false)).join("") + TESTIMONIALS.map(t => card(t, true)).join("");
+    track.style.setProperty("--dur", TESTIMONIALS.length * 9 + "s");
+    // only animate while on screen
+    new IntersectionObserver(([en]) => { track.style.animationPlayState = en.isIntersecting ? "" : "paused"; }).observe(track.parentElement);
   }
 
   /* =========================================================
@@ -469,7 +456,7 @@
     });
     departures();
     gallery();
-    initCarousel();
+    initReviews();
     initFAQ($("#faqList"));
     initEnquiryForm($("#enquiryForm"));
     void tabs;
